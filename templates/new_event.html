@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>New Event</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+     <link rel='stylesheet' type='text/css' href="{% static 'register.css' %}">
+    <!--<link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>-->
+    <link rel='stylesheet' type='text/css' href="{% static 'indexstyle.css' %}">
+    <link rel='stylesheet' type='text/css' href="{% static 'detailsstyle.css' %}">
+   
+</head>
+<body>
+
+<div class="bgimage1">
+        <div class="menu">
+            <div class="leftmenu">
+                <h4 color="white"> Event Mangagement </h4>
+            </div>
+
+            <div class="rightmenu">
+                <ul>
+    
+                    
+                    <li><button type="button" onclick="location.href ='index'">logout</button></li>
+                    <li><button type="button" onclick="location.href ='details'">back</button></li>
+                </ul>
+           
+                
+            </div>
+            </div>
+           
+
+
+
+
+
+ <form action="new_event" method="POST" class="top" >
+            {% csrf_token %}
+             <div class= register>
+            <h2> Add new event</h2>
+            </div>
+            <div class="registercontainer">
+        <label for="E_id" class="lable"> Event id</label>
+            <input type="text"  class="input-boxr" name="E_id" placeholder="Event id" required>
+        <label for="E_name" class="lable">Event name</label>
+            <input type="text"  class="input-boxr" name="E_name" placeholder="Event name" required>
+
+
+        <p class="lable">Event type</p><br>
+        <label for="E_type" class="input-boxr">Cultural</label>
+          <input type="radio" name="E_type" value="Cultural" placeholder="Event type"required>
+        <label for="E_type" class="input-boxr">Technical</label>
+          <input type="radio" name="E_type" value="Technical" placeholder="Event type"required>
+            <br>
+            <br>
+
+
+        <label for="E_location" class="lable">Event location</label>
+            <input type="text"  class="input-boxr" name="E_location" placeholder="Event location" required>
+        <label for="E_date" class="lable">Event date</label>
+            <input type="text"  class="input-boxr" name="E_date" placeholder="formate yyyy-mm-dd" required>
+        <label for="E_time" class="lable">Event time</label>
+            <input type="text" class="input-boxr"  name="E_time" placeholder="formate hh-mm-ss" required>
+        <label for="E_fees" class="lable">Event fees</label>
+            <input type="text" class="input-boxr"  name="E_fees" placeholder="Event fees"required>
+
+        <label for="E_coordinator_no" class="lable">Event coordinator_no</label>
+            <input type="text" class="input-boxr"  name="E_coordinator_no" placeholder="10 digit mobile number"required>
+
+        <button class="lable" type="submit" class="submit" color="orange" >Submit</button>
+       
+   
+    <div  >
+        <button type="button" onclick="location.href ='details'" class="cancel">Cancel</button>
+        
+    </div>
+    </div>
+    
+        
+
+    
+</form>
+</div>  
+</div>
+    
+    
+
+
+</body>
+</html>
